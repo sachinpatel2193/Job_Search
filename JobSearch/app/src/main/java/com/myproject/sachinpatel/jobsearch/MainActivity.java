@@ -13,8 +13,6 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 
-import com.example.sachinpatel.jobsearch.R;
-
 public class MainActivity extends AppCompatActivity {
 
     Spinner selectProvince;
@@ -30,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         Job_poistion = (EditText)findViewById(R.id.jobposition);
         location_City = (EditText)findViewById(R.id.city);
 
+
+
+
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,19 +40,34 @@ public class MainActivity extends AppCompatActivity {
                 Log.d("city", City);
                 String Province = selectProvince.getSelectedItem().toString();
                 Log.d("Province", Province);
+                if(position.length()==0){
+                    Job_poistion.requestFocus();
+                    Job_poistion.setError("Field Cannot be Empty");
+                } else if(location_City.length()==0){
+                    location_City.requestFocus();
+                    location_City.setError("Field Cannot be Empty");
+                }else if(selectProvince.getSelectedItem().toString().trim().equals("Pick one")) {
+                    Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    Intent intent = new Intent(MainActivity.this, PortalPage.class);
+                    intent.putExtra("position", position);
+                    intent.putExtra("city", City);
+                    intent.putExtra("province", Province);
+                    startActivity(intent);
 
-                Intent intent = new Intent(MainActivity.this, PortalPage.class);
-                intent.putExtra("position", position);
-                intent.putExtra("city", City);
-                intent.putExtra("province", Province);
-                startActivity(intent);
+                }
+
+
 
             }
         });
 
         ArrayAdapter<String> myAdapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.province_names));
         myAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
         selectProvince.setAdapter(myAdapter);
+
 
     }
 

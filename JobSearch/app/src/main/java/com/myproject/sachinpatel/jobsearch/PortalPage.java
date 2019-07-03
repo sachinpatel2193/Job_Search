@@ -9,7 +9,7 @@ import android.webkit.WebView;
 import android.widget.ImageButton;
 
 
-import com.example.sachinpatel.jobsearch.R;
+
 
 public class PortalPage extends AppCompatActivity {
 

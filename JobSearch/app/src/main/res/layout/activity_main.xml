@@ -58,10 +58,35 @@
             android:maxLength="30"
             android:paddingLeft="15dp"
             android:background="@drawable/rounded_edittext"
-
-
           />
       </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:clipToPadding="false"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_province">
+        <TextView
+            android:layout_width="140dip"
+            android:layout_height="wrap_content"
+            style="@style/AppTheme"
+            android:text="Province :"
+            android:fontFamily="monospace"
+            android:textSize="16dp"
+            />
+        <Spinner
+            android:id="@+id/province"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:paddingLeft="1dp"
+            android:background="@drawable/rounded_edittext"
+            />
+
+    </LinearLayout>
+
       <LinearLayout
           android:layout_marginTop="5dp"
           android:clipToPadding="false"
@@ -76,7 +101,7 @@
             style="@style/AppTheme"
             android:text="City :"
             android:fontFamily="monospace"
-            android:textSize="18dp"
+            android:textSize="16dp"
             />
         <EditText
             android:layout_width="100dp"
@@ -90,30 +115,7 @@
 
             />
       </LinearLayout>
-        <LinearLayout
-            android:layout_marginTop="10dp"
-            android:clipToPadding="false"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/layout_province">
-        <TextView
-            android:layout_width="140dip"
-            android:layout_height="wrap_content"
-            style="@style/AppTheme"
-            android:text="Province :"
-            android:fontFamily="monospace"
-            android:textSize="18dp"
-            />
-        <Spinner
-            android:id="@+id/province"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:paddingLeft="1dp"
-            android:background="@drawable/rounded_edittext"/>
 
-      </LinearLayout>
 
       <LinearLayout
           android:layout_marginTop="10dp"
